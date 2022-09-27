@@ -32,7 +32,7 @@ gulp.task('xampp', function () {
 
 gulp.task('zip', function() {
   return gulp.src(['src/**/*','!src/scss*'])
-  		.pipe(zip(pkg.name+'_'+pkg.version+'.zip'))
+  		.pipe(zip(pkg.name+'.zip'))
   		.pipe(gulp.dest('dist'));
 });
 

@@ -1,11 +1,12 @@
-<!-- cntnd_SKELETON/template/default.html -->
-{if $truncate}
-<div class="truncate" id="truncate-{$uuid}">
+{if NULL neq $image}
+<!-- cntnd_static_image/template/default.html -->
+{assign var="data_fancybox'" value='data-fancybox'}
+{if $fancybox && 0 lt $fancyboxGroup|strlen}
+    {assign var="data_fancybox" value="data-fancybox=`$fancyboxGroup`"}
 {/if}
-{$text}
-{if $truncate}
-</div>
-<a target="{$uuid}" class="read-more">Mehr</a>
-<a target="{$uuid}" class="read-less" style="display: none;">Schliessen</a>
+
+{if $fancybox}<a href="{$image}" {$data_fancybox}>{/if}
+    <img src="{$image}" class="{$additionalClass}" />
+{if $fancybox}</a>{/if}
+<!-- cntnd_static_image/template/default.html -->
 {/if}
-<!-- cntnd_SKELETON/template/default.html -->

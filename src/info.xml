@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-<name>cntnd_SKELETON</name>
+<name>cntnd_static_image</name>
 <description>
-cntnd_skeleton
-Core HTML
+cntnd_static_image
+Static Image Module
 
 Autor Thomas D Ascoli, thomas@dasco.li
 
-Version 1.0.0
+Version 1.0.1
 </description>
 <type/>
-<alias>cntnd_skeleton</alias>
+<alias>cntnd_static_image</alias>
 </module>
