@@ -1,14 +1,19 @@
 <?php
 // cntnd_static_image_output
-
-// includes
-cInclude('module', 'includes/class.cntnd_static_image.php');
+$cntnd_module = "cntnd_static_image";
 
 // assert framework initialization
 defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
 
 // editmode
 $editmode = cRegistry::isBackendEditMode();
+
+// includes
+cInclude('module', 'includes/class.cntnd_static_image.php');
+if ($editmode) {
+    cInclude('module', 'includes/style.cntnd_static_image.php');
+}
+
 
 // input/vars
 $selectedDir = "CMS_VALUE[1]";
@@ -24,7 +29,7 @@ $static_image = new Cntnd\StaticImage\CntndStaticImage($lang, $client);
 
 // module
 if ($editmode){
-	echo '<div class="content_box"><label class="content_type_label">'.mi18n("MODULE").'</label>';
+    echo '<span class="module_box"><label class="module_label">'.mi18n("MODULE").'</label></span>';
 }
 
 if (!empty($selectedDir) && !empty($selectedImage)) {

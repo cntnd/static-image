@@ -1,5 +1,6 @@
 ?><?php
 // cntnd_static_image_input
+$cntnd_module = "cntnd_static_image";
 
 // includes
 cInclude('module', 'includes/class.cntnd_static_image.php');

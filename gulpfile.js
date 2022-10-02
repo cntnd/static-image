@@ -1,5 +1,5 @@
 var gulp        = require('gulp');
-var sass        = require('gulp-sass');
+var sass        = require('gulp-sass')(require('sass'));
 var minify      = require('gulp-minifier');
 var zip         = require('gulp-zip');
 var file        = require('gulp-file');
@@ -26,12 +26,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('xampp', function () {
-    return gulp.src(['src/**/*','!src/scss*'])
+    return gulp.src(['src/**','!src/{scss,scss/**}','!src/{sql,sql/**}'])
         .pipe(gulp.dest('modules/'+pkg.name));
 });
 
 gulp.task('zip', function() {
-  return gulp.src(['src/**/*','!src/scss*'])
+    return gulp.src(['src/**','!src/{scss,scss/**}','!src/{sql,sql/**}'])
   		.pipe(zip(pkg.name+'.zip'))
   		.pipe(gulp.dest('dist'));
 });
